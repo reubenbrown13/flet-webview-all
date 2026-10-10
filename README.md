@@ -174,7 +174,8 @@ webview = FletWebviewAll(
     background_color=ft.Colors.BLUE_GREY_900,
     ad_block_allowed_domains=["example.com"],   # never block here (subdomains too)
     ad_block_blocked_domains=["adserver.somedomain.com",],    # always block
-    on_ad_blocked=lambda e: print("blocked", e.url, e.is_main_frame),on_page_started=lambda e: print("Starting", e.url),
+    on_ad_blocked=lambda e: print("blocked", e.url, e.is_main_frame),
+    on_page_started=lambda e: print("Starting", e.url),
     on_page_finished=lambda e: print("Finished", e.url),
     on_progress=lambda e: print(f"{e.progress}%"),
     on_web_resource_error=lambda e: print(e.error_code, e.description),
